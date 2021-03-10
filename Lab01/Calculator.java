@@ -3,9 +3,9 @@ public class Calculator {
 	public static void main(String[] args) {
 		double sum, sub, mul, div, quo;
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Enter the first number: ");
+		System.out.print("Enter the first number: ");
 		double num1 = keyboard.nextDouble();
-		System.out.println("Enter the second number: ");
+		System.out.print("Enter the second number: ");
 		double num2 = keyboard.nextDouble();
 		sum = num1 + num2;
 		sub = num1 - num2;

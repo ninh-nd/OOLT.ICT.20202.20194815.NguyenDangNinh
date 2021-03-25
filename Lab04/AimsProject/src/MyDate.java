@@ -5,6 +5,9 @@ public class MyDate {
 		this.month = month;
 		this.year = year;
 	}
+	MyDate(int dayint, int monthint, int yearint) {
+		super();
+	}
 	private String day;
 	private String month;
 	private String year;
@@ -27,20 +30,22 @@ public class MyDate {
 		this.year = year;
 	}
 	public MyDate dateprocess(MyDate date) {
+		MyDate processedDate = new MyDate("0", "0", "0");
 		String month = date.getMonth();
 		month = month.substring(0, 1).toUpperCase() + month.substring(1);
-		date.setMonth(month);
+		processedDate.setMonth(month);
 		String day = date.getDay();
 		if (day == "1" || day == "11" || day == "21" || day == "31") day = day + "st";
 		else if (day == "2" || day == "12" || day == "22") day = day + "nd";
 		else if (day == "3" || day == "13" || day == "23") day = day + "rd";
 		else day = day + "th";
-		date.setDay(day);
-		return date;
+		processedDate.setDay(day);
+		processedDate.setYear(date.getYear());
+		return processedDate;
 	}
 	public void print(MyDate date) {
-		dateprocess(date);
-		System.out.println(month + " " + day + " " + year);
+		MyDate processedDate = dateprocess(date);
+		System.out.println(processedDate.getMonth() + " " + processedDate.getDay() + " " + processedDate.getYear());
 	}
 	public void alternativePrint(MyDate date) {
 		System.out.println(date.getDay() + "-" + date.getMonth() + "-" + date.getYear());

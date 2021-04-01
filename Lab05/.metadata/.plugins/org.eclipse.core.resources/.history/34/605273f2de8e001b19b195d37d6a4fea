@@ -1,0 +1,16 @@
+package hust.soict.globalict.garbage;
+public class GarbageCreator {
+
+	public static void main(String[] args) {
+		System.out.println("begin");
+		// TODO Auto-generated method stub
+		for (double i=0;i < 1000000000; i++) {
+			new Integer(4);
+			new Integer(3);
+			new Integer(5);
+			new Integer(3);
+		}
+		System.out.print("end");
+	}
+
+}

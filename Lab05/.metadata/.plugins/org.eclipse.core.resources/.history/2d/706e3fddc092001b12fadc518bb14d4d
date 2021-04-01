@@ -1,0 +1,18 @@
+package hust.soict.globalict.garbage;
+
+public class NoGarbage {
+	public static void main(String[] args) throws InterruptedException {
+		//Create garbage
+		Integer i1 = new Integer(4);
+		Integer i2 = new Integer(5);
+		i1 = null;
+		i2 = null;
+		//Request system to clear garbage
+		System.gc();
+	}
+    protected void finalize() throws Throwable
+    {
+        System.out.println("Garbage collector called");
+        System.out.println("Object garbage collected : " + this);
+    }
+}

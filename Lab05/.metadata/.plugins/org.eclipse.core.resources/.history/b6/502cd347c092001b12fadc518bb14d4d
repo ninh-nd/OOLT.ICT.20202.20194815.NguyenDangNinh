@@ -1,0 +1,46 @@
+package hust.soict.globalict.garbage;
+public class GarbageCreator {
+
+	public static void main(String[] args) {
+		//Create garbage
+			Integer i = new Integer(4);
+			i = null;
+			Integer i1 = new Integer(4);
+			i1 = null;
+			Integer i3 = new Integer(4);
+			i3 = null;
+			Integer i4 = new Integer(4);
+			i4 = null;
+			Integer i5 = new Integer(4);
+			i5 = null;
+			Integer i6 = new Integer(4);
+			i6 = null;
+			Integer i7 = new Integer(4);
+			i7 = null;
+			Integer i8 = new Integer(4);
+			i8 = null;
+			Integer i9 = new Integer(4);
+			i9 = null;
+			Integer i10 = new Integer(4);
+			i10 = null;
+			Integer i11 = new Integer(4);
+			i11 = null;
+			Integer i12 = new Integer(4);
+			i12 = null;
+			Integer i13 = new Integer(4);
+			i13 = null;
+			Integer i14 = new Integer(4);
+			i14 = null;
+			Integer i15 = new Integer(4);
+			i15 = null;
+			Integer i16 = new Integer(4);
+			i16 = null;
+			Integer i17 = new Integer(4);
+			i17 = null;
+			Integer i18 = new Integer(4);
+			i18 = null;
+			Integer i19 = new Integer(4);
+			i19 = null;
+		System.out.println("end");
+	}
+}

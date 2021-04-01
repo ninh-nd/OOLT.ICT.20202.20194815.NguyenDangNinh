@@ -1,0 +1,11 @@
+package hust.soict.globalict.garbage;
+public class GarbageCreator {
+
+	public static void main(String[] args) {
+		//Create garbage
+		while (true) {
+			Integer i = new Integer(4);
+			System.out.println("Out");
+		}
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;FirstdegreeEquation.java&apos; to &apos;FirstDegreeEquation.java&apos;&#x0D;&#x0A;- Original project: &apos;JavaBasics&apos;&#x0D;&#x0A;- Original element: &apos;FirstdegreeEquation.java&apos;&#x0D;&#x0A;- Renamed element: &apos;FirstDegreeEquation.java&apos;" description="Rename compilation unit &apos;FirstdegreeEquation.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{FirstdegreeEquation.java" name="FirstDegreeEquation.java" references="false" stamp="1615389233902" version="1.0"/>
+</session>

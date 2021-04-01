@@ -1,0 +1,10 @@
+package hust.soict.globalict.garbage;
+public class GarbageCreator {
+
+	public static void main(String[] args) {
+			Integer i = new Integer(5);
+			i = null;
+			new Integer((int)Math.random() * 100);
+	}
+
+}

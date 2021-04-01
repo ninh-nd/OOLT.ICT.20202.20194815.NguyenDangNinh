@@ -1,0 +1,19 @@
+package hust.soict.globalict.test.utils;
+import hust.soict.globalict.aims.utils.MyDate;
+import hust.soict.globalict.aims.utils.DateUtils;
+public class DateTest {
+
+	public static void main(String[] args) {
+		MyDate datetest = new MyDate("12", "feb", "2020");
+		datetest.print(datetest);
+		datetest.alternativePrint(datetest);
+		MyDate datetest2 = new MyDate("12", "jan", "199");
+		MyDate datetest3 = new MyDate("2", "dec", "2011");
+		System.out.println(DateUtils.compare(datetest, datetest2));
+		MyDate array[] = new MyDate[] {datetest, datetest2, datetest3};
+		DateUtils.sortDate(array);
+		for (int i=0; i< array.length; i++) {
+			System.out.println(array[i].getDay() + "-" + array[i].getMonth() + "-" + array[i].getYear());
+		}
+	}
+}

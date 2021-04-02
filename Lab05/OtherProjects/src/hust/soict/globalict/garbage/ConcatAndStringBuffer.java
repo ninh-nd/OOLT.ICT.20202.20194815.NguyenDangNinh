@@ -22,6 +22,7 @@ public class ConcatAndStringBuffer {
 		//Using string buffer
 		start = System.currentTimeMillis();
 		StringBuilder outputByBuffer = new StringBuilder();
+		input = readFile("C:\\Users\\admin\\Desktop\\Eclipse-workspace\\OtherProjects\\src\\hust\\soict\\globalict\\garbage\\textfile.txt");
 		for (int i=0; i<input.length(); i++) {
 			char a = input.charAt(i);
 			outputByBuffer.append(a);

@@ -1,0 +1,72 @@
+package hust.soict.globalict.aims;
+import hust.soict.globalict.aims.media.Book;
+import hust.soict.globalict.aims.media.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.Media;
+import hust.soict.globalict.aims.order.Order;
+import java.util.*;
+
+public class Aims {
+
+	public static void main(String[] args) {
+		//Create database 
+		DigitalVideoDisc.database.add(new DigitalVideoDisc(0, "The Lion King", "Animation", "Roger Allers", 87, 19.95f));
+		DigitalVideoDisc.database.add(new DigitalVideoDisc(1, "The Lion King 2", "Animation", "Roger Allers", 87, 29.95f));
+		DigitalVideoDisc.database.add(new DigitalVideoDisc(2, "Harry Porter", "Animation", "Helley", 34, 10.95f));
+		Book.database.add(new Book(3, "Doraemon", "Comic", 10.0f));
+		Book.database.add(new Book(4, "Conan", "Comic", 30.0f));
+		Order newOrder = new Order();
+		while (true) {
+			showMenu();
+			Scanner scanner = new Scanner(System.in);
+			int choice = scanner.nextInt();
+			switch(choice) {
+			case 0:
+			{
+				System.exit(0);
+			}
+			case 1:
+			{
+				newOrder = null;
+				System.out.println("New order has been created");
+				break;
+			}
+			case 2:
+			{
+				System.out.println("Books: ");
+				break;
+			}
+			case 3:
+			{
+				break;
+			}
+			case 4:
+			{
+				newOrder.printOrder(); 
+				break;
+			}
+			default:
+				System.out.println("Please choose a number between 0 and 4");
+			}
+		}
+	}
+	public static void showMenu() { 
+
+		System.out.println("Order Management Application: "); 
+
+		System.out.println("--------------------------------"); 
+
+		System.out.println("1. Create new order"); 
+
+		System.out.println("2. Add item to the order"); 
+
+		System.out.println("3. Delete item by id"); 
+
+		System.out.println("4. Display the items list of order"); 
+
+		System.out.println("0. Exit"); 
+
+		System.out.println("--------------------------------"); 
+
+		System.out.println("Please choose a number: 0-1-2-3-4"); 
+	}
+}

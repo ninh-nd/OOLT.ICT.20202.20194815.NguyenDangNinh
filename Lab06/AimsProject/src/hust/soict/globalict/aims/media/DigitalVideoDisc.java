@@ -6,43 +6,26 @@ public class DigitalVideoDisc extends Media {
 	private String director;
 	private int length;
 	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-		super();
-		this.title = title;
-		this.category = category;
+		super(title, category, cost);
 		this.director = director;
 		this.length = length;
-		this.cost = cost;
 	}
 	public DigitalVideoDisc(String title, String category, String director, float cost) {
-		super();
-		this.title = title;
-		this.category = category;
+		super(title, category, cost);
 		this.director = director;
-		this.cost = cost;
 	}
 	public DigitalVideoDisc(String title, String category, float cost) {
-		super();
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
+		super(title, category, cost);
+	}
+	public DigitalVideoDisc(float cost) {
+		super(cost);
 	}
 	public DigitalVideoDisc(String title) {
-		super();
-		this.title = title;
+		super(title);
 	}
 	public DigitalVideoDisc(int length) {
 		super();
 		this.length = length;
-	}
-	public DigitalVideoDisc(float cost) {
-		super();
-		this.cost = cost;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public String getCategory() {
-		return category;
 	}
 	public String getDirector() {
 		return director;
@@ -50,36 +33,19 @@ public class DigitalVideoDisc extends Media {
 	public int getLength() {
 		return length;
 	}
-	public float getCost() {
-		return cost;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
 	public void setDirector(String director) {
 		this.director = director;
 	}
 	public void setLength(int length) {
 		this.length = length;
 	}
-	public void setCost(float cost) {
-		this.cost = cost;
-	}
 	public boolean search(String title) {
 		return this.getTitle().toLowerCase().contains(title.toLowerCase());
 	}
-	public DigitalVideoDisc(int id, String title, String category, String director, int length, float cost) {
-		super(id, title, category, cost);
-		this.length = length;
-	}
-	public static ArrayList<DigitalVideoDisc> database = new ArrayList<DigitalVideoDisc>();
-	@Override
-	public void showDatabase() {
-		for (DigitalVideoDisc disc: database)
-			System.out.println("ID: " + disc.getId() + " - " + "Title: " + disc.getTitle() + " - " + "Category: " + disc.getCategory() + " - " + "Director: " + disc.getDirector() + " - " + "Length: " + disc.getLength() + " - " + "Cost: " + disc.getCost() + "\n");
-	}
+//	@Override
+//	public void showDatabase() {
+//		for (DigitalVideoDisc disc: database)
+//			System.out.println("ID: " + disc.getId() + " - " + "Title: " + disc.getTitle() + " - " + "Category: " + disc.getCategory() + " - " + "Director: " + disc.getDirector() + " - " + "Length: " + disc.getLength() + " - " + "Cost: " + disc.getCost() + "\n");
+//	}
 }
  

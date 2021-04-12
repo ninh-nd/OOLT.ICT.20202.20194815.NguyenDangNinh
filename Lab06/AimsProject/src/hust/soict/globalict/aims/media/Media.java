@@ -1,9 +1,10 @@
 package hust.soict.globalict.aims.media;
+
 public class Media {
-	protected String title;
-	protected String category;
-	protected float cost;
-	protected int id;
+	private String title;
+	private String category;
+	private float cost;
+	public int id = -1;
 	public int getId() {
 		return id;
 	}
@@ -27,26 +28,24 @@ public class Media {
 	}
 	public Media() {
 		// TODO Auto-generated constructor stub
+		id++;
 	}
 	public Media(String title){ 
+		id++;
 		this.title = title; 
 		} 
-
+	public Media(float cost) {
+		this.cost = cost;
+	}
 	public Media(String title,  String category){ 
-		this(title); 
+		id++;
+		this.title = title;
 		this.category = category; 
 		} 
 	public Media(String title, String category, float cost) {
+		id++;
 		this.title = title;
 		this.category = category;
 		this.cost = cost;
-	}
-	public Media(int id, String title, String category, float cost) {
-		this.id = id;
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
-	}
-	public void showDatabase() {
 	}
 }

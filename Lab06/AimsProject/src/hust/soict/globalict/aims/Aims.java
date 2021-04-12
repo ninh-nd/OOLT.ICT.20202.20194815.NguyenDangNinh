@@ -20,7 +20,7 @@ public class Aims {
 			}
 			case 1:
 			{
-				newOrder = null;
+				newOrder = new Order();
 				System.out.println("New order has been created");
 				break;
 			}

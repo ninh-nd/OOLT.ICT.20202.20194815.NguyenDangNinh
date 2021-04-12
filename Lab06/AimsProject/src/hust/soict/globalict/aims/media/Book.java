@@ -2,7 +2,6 @@ package hust.soict.globalict.aims.media;
 import java.util.*;
 
 public class Book extends Media {
-	public static ArrayList<Book> database = new ArrayList<Book>();
 	private List<String> authors = new ArrayList<String>();
 	public Book() {
 	}
@@ -30,17 +29,18 @@ public class Book extends Media {
 	public Book(String title, String category, float cost) {
 		super(title, category, cost);	
 	}
-	public Book(int id, String title, String category, float cost) {
-		super(id, title, category, cost);	
-	}
 	public Book(String title, String category, List<String> authors) {
 		super(title, category);
 		this.authors = authors;
 	}
-	@Override
-	public void showDatabase() {
-		for (Book book: database) {
-			System.out.println("ID: " + book.getId() + " - " + "Title: " + book.getTitle() + " - " + "Category: " + book.getCategory() + " - " + "Cost: " + book.getCost() + "\n");
-		}
+	public Book(String title, String category, List<String> authors, float cost) {
+		super(title, category, cost);
+		this.authors = authors;
 	}
+//	@Override
+//	public void showDatabase() {
+//		for (Book book: database) {
+//			System.out.println("ID: " + book.getId() + " - " + "Title: " + book.getTitle() + " - " + "Category: " + book.getCategory() + " - " + "Cost: " + book.getCost() + "\n");
+//		}
+//	}
 }

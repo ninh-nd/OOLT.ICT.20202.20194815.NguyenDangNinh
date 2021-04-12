@@ -5,6 +5,9 @@ import hust.soict.globalict.aims.media.Media;
 import hust.soict.globalict.aims.utils.*;
 public class Order {
 	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	public ArrayList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
 	public static final int MAX_NUMBERS_ORDERED = 10;
 	private MyDate dateOrdered;
 	public static final int MAX_LIMITED_ORDERS = 5;

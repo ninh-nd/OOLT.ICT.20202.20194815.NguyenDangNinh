@@ -1,18 +1,13 @@
 package hust.soict.globalict.aims;
 import hust.soict.globalict.aims.media.Book;
 import hust.soict.globalict.aims.media.DigitalVideoDisc;
+import hust.soict.globalict.aims.media.Media;
 import hust.soict.globalict.aims.order.Order;
 import java.util.*;
 
 public class Aims {
 
 	public static void main(String[] args) {
-		//Create database 
-		DigitalVideoDisc.database.add(new DigitalVideoDisc(0, "The Lion King", "Animation", "Roger Allers", 87, 19.95f));
-		DigitalVideoDisc.database.add(new DigitalVideoDisc(1, "The Lion King 2", "Animation", "Roger Allers", 87, 29.95f));
-		DigitalVideoDisc.database.add(new DigitalVideoDisc(2, "Harry Porter", "Animation", "Helley", 34, 10.95f));
-		Book.database.add(new Book(3, "Doraemon", "Comic", 10.0f));
-		Book.database.add(new Book(4, "Conan", "Comic", 30.0f));
 		Order newOrder = new Order();
 		while (true) {
 			showMenu();
@@ -31,11 +26,65 @@ public class Aims {
 			}
 			case 2:
 			{
-				
+				System.out.println("Select 1. DVD or 2. Book");
+				Scanner sc = new Scanner(System.in);
+				int type = sc.nextInt();
+					switch(type) {
+					case 1: {
+						System.out.print("DVD's name: ");
+						String name = sc.next();
+						System.out.print("DVD's category: ");
+						String category = sc.next();
+						System.out.print("DVD's director: ");
+						String director = sc.next();
+						System.out.print("DVD's length: ");
+						int length = sc.nextInt();
+						System.out.print("DVD's cost: ");
+						float cost = sc.nextFloat();
+						DigitalVideoDisc dvd = new DigitalVideoDisc(name, category, director, length, cost);
+						newOrder.addMedia(dvd);
+						break;
+					}
+					case 2: {
+						System.out.print("Book's title: ");
+						String title = sc.next();
+						System.out.print("Book's category: ");
+						String category = sc.next();
+						System.out.print("List of authors (comma seperated): ");
+						String authorList = sc.next();
+						// List process
+						List<String> authors = Arrays.asList(authorList.split(",[ ]*"));
+						System.out.print("Book's cost");
+						float cost = sc.nextFloat();
+						Book book = new Book(title, category, authors, cost);
+						newOrder.addMedia(book);
+						break;
+					}
+					default:
+						System.out.println("Please enter 1 and 2");
+						break;
+					}
+				System.out.println("Book/DVD added successfully");
 				break;
 			}
 			case 3:
 			{
+				System.out.println("Current ordered items: ");
+				newOrder.printOrder();
+				System.out.print("Enter an ID to remove: ");
+				while (true) {
+					Scanner del = new Scanner(System.in);
+					int id = del.nextInt();
+					if (id < 0 || id > newOrder.getItemsOrdered().size()) {
+						System.out.println("Invalid ID. Please enter a valid ID to remove");
+					}
+					else {
+						newOrder.removeMedia(id);
+						System.out.println("Removed successfully");
+						break;
+					}
+						
+				}
 				break;
 			}
 			case 4:

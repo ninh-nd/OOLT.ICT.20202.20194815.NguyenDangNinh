@@ -1,0 +1,59 @@
+package hust.soict.globalict.aims.order;
+import java.util.*;
+
+import hust.soict.globalict.aims.media.Media;
+import hust.soict.globalict.aims.media.disc.DigitalVideoDisc;
+import hust.soict.globalict.aims.utils.*;
+public class Order {
+	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	public ArrayList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
+	public static final int MAX_NUMBERS_ORDERED = 10;
+	private MyDate dateOrdered;
+	public static final int MAX_LIMITED_ORDERS = 5;
+	private static int nbOrders = 0;
+	public void addMedia(Media media) {
+		if (itemsOrdered.size() < MAX_NUMBERS_ORDERED) {
+			itemsOrdered.add(media);
+			if (itemsOrdered.size() != 9)
+			System.out.println("The chosen media has been added");
+			else if (itemsOrdered.size() == 9)
+			System.out.println("The chosen media has been added. Warning: The order is almost full");
+		}
+			if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED) {
+				System.out.println("The order is full");
+				return;
+			}
+	}
+	public void removeMedia(int id) {
+		for (int i=0; i< itemsOrdered.size(); i++) {
+			if (itemsOrdered.get(i).getId() == id)
+			{
+				itemsOrdered.remove(i);
+				System.out.println("The disc has been removed");
+			}
+			else break;
+		}
+	}
+	public void printOrder() {
+		System.out.println("***********************Order***********************");
+		System.out.println("Date: " + java.time.LocalDate.now());
+		System.out.println("Ordered items: ");
+		for (Media media: itemsOrdered)
+			System.out.println("ID: " + media.getId() + " - " + "Title: " + media.getTitle() + " - " + "Category: " + media.getCategory() + " - " + "Cost: " + media.getCost() + "\n");
+		System.out.println("Total cost: " + totalCost());
+	}
+	public float totalCost() {
+		float totalcost = 0.00f;
+		Media[] arr = new Media[itemsOrdered.size()];
+		arr = itemsOrdered.toArray(arr);
+		for (int i=0; i< arr.length; i++) totalcost += arr[i].getCost();
+		return totalcost;
+	}
+//	public Media getALuckyItem() {
+//		int randomIndex = (int)(Math.random() * itemsOrdered.size());
+//		itemsOrdered.get(randomIndex).setCost(0.0f);
+//		return itemsOrdered.get(randomIndex);
+//	}
+}

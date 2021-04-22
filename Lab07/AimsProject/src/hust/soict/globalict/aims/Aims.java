@@ -3,11 +3,15 @@ import hust.soict.globalict.aims.media.Media;
 import hust.soict.globalict.aims.media.book.Book;
 import hust.soict.globalict.aims.media.disc.DigitalVideoDisc;
 import hust.soict.globalict.aims.order.Order;
+import hust.soict.globalict.aims.threads.MemoryDaemon;
 import java.util.*;
 
 public class Aims {
 
 	public static void main(String[] args) {
+		MemoryDaemon mem = new MemoryDaemon();
+		Thread newThread = new Thread(mem);
+		mem.start(newThread);
 		Order newOrder = new Order();
 		while (true) {
 			showMenu();
@@ -26,7 +30,7 @@ public class Aims {
 			}
 			case 2:
 			{
-				System.out.println("Select 1. DVD or 2. Book");
+				System.out.println("Select 1. DVD or 2. Book or 3. CD");
 				Scanner sc = new Scanner(System.in);
 				int type = sc.nextInt();
 					switch(type) {
@@ -59,6 +63,21 @@ public class Aims {
 						Book book = new Book(title, category, authors, cost);
 						newOrder.addMedia(book);
 						break;
+					}
+					case 3: {
+						System.out.print("CD's name: ");
+						String name = sc.next();
+						System.out.print("CD's category: ");
+						String category = sc.next();
+						System.out.print("CD's director: ");
+						String director = sc.next();
+						System.out.print("CD's length: ");
+						int length = sc.nextInt();
+						System.out.print("CD's cost: ");
+						float cost = sc.nextFloat();
+						System.out.println("CD's artist: ");
+						String artist = sc.next();
+						//Unfinished...
 					}
 					default:
 						System.out.println("Please enter 1 and 2");

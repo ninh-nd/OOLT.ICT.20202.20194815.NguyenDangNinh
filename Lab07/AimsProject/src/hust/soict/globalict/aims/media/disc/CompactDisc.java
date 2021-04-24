@@ -1,18 +1,19 @@
 package hust.soict.globalict.aims.media.disc;
 import java.util.*;
-public class CompactDisc extends Disc {
+public class CompactDisc extends Disc implements Playable {
 	private String artist;
 	private ArrayList<Track> tracks;
 	public CompactDisc() {
 	}
-	public CompactDisc(String title, String category, String director, int length, float cost, String artist, ArrayList<Track> tracks) {
-		super(title, category, director, length, cost);
+	public CompactDisc(String title, String category, String director, float cost, String artist, ArrayList<Track> tracks) {
+		super(title, category, director, cost);
 		this.artist = artist;
 		this.tracks = tracks;
 	}
 	public String getArtist() {
 		return artist;
 	}
+
 	public void addTrack(Track track) {
 		if (tracks.contains(track)) {
 			System.out.println("Track is already in the list");
@@ -31,11 +32,19 @@ public class CompactDisc extends Disc {
 			return;
 		}
 	}
-	public int getTotalLength() {
+	@Override
+	public int getLength() {
 		int length = 0;
 		for (int i=0; i< tracks.size(); i++) {
 			length += tracks.get(i).getLength();
 		}
 		return length;
+	}
+	public void play() {
+		System.out.println("Artists: " + this.getArtist());
+		System.out.println("Number of tracks: " + tracks.size());
+		for (int i=0; i< tracks.size(); i++) {
+			tracks.get(i).play();
+		}
 	}
 }

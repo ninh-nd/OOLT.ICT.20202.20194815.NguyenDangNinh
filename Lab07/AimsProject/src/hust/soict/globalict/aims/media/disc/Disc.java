@@ -8,6 +8,10 @@ public class Disc extends Media {
 	public int getLength() {
 		return length;
 	}
+	
+	public void setLength(int length) {
+		this.length = length;
+	}
 	public String getDirector() {
 		return director;
 	}
